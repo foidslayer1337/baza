@@ -2,6 +2,7 @@ package com.example.pawelbaza;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     EditText skalaLadnosci;
     ListView listviw;
     Button dodaj;
+    ArrayAdapter<Kot> arrayAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +49,11 @@ public class MainActivity extends AppCompatActivity {
     dodaj.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            String rasa = rasaKota.getText().toString();
+            int wiek = Integer.parseInt(wiekKota.getText().toString());
+            int skala = Integer.parseInt(skalaLadnosci.getText().toString());
+            Kot kot = new Kot(rasa,wiek,skala);
+            kotyDatabase.zwrocKotyDAO().wstawDoBazyKota(kot);
         }
     });
     }
