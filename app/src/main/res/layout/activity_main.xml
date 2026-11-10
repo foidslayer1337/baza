@@ -42,19 +42,20 @@
         android:text="Skala ladnosci na 10" />
 
     <EditText
-        android:id="@+id/editTextNumber2"
+        android:id="@+id/skalaLadnosci"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/dodaj"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="Dodaj" />
 
     <ListView
+        android:id="@+id/listviw"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

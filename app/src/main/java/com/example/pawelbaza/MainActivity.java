@@ -1,6 +1,10 @@
 package com.example.pawelbaza;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +16,11 @@ import androidx.room.RoomDatabase;
 
 public class MainActivity extends AppCompatActivity {
     KotyDataBase kotyDatabase;
+    EditText rasaKota;
+    EditText wiekKota;
+    EditText skalaLadnosci;
+    ListView listviw;
+    Button dodaj;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,5 +39,15 @@ public class MainActivity extends AppCompatActivity {
             .allowMainThreadQueries()
             .build();
     kotyDatabase.zwrocKotyDAO().zwrocWszystkieKotyZBazy();
+    rasaKota = findViewById(R.id.rasaKota);
+    wiekKota = findViewById(R.id.wiekKota);
+    skalaLadnosci = findViewById(R.id.skalaLadnosci);
+    listviw = findViewById(R.id.listviw);
+    dodaj = findViewById(R.id.dodaj);
+    dodaj.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+        }
+    });
     }
 }
