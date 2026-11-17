@@ -2,6 +2,7 @@ package com.example.pawelbaza;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -83,5 +84,15 @@ public class MainActivity extends AppCompatActivity {
         });
         listaKotow.addAll(kotyDatabase.zwrocKotyDAO().zwrocWszystkieKotyZBazy());
         arrayAdapter.notifyDataSetChanged();
+        listviw.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                Kot kot = listaKotow.get(position);
+                kotyDatabase.zwrocKotyDAO().usunZBazy(kot);
+                listaKotow.remove(position);
+                arrayAdapter.notifyDataSetChanged();
+                return true;
+            }
+        });
     }
 }

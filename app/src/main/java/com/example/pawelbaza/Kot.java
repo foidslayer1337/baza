@@ -18,7 +18,7 @@ public class Kot {
 
     @Override
     public String toString() {
-        return "Wiek:" + Wiek + ", Rasa:" + Rasa + "\n" + ", Skalapieknoscina10: " + Skalapieknoscina10;
+        return "Rasa: " + Rasa  + " Wiek: "+Wiek + " Skalapieknoscina10: " + Skalapieknoscina10;
     }
 
     public Kot(String rasa, int wiek, int skalapieknoscina10) {
